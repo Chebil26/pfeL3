@@ -1,0 +1,111 @@
+{% extends 'accounts/base.html' %}
+
+{% block content %}
+<head>
+    <title> Planning </title>
+</head>
+
+
+<style>
+
+    html,
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .plann {
+ 
+        height: 45%;
+        text-align: center;
+        flex-direction: column;
+        margin: 30px;
+        margin-top: 120px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    table { 
+       margin: 10px
+    }
+
+
+    table,tr,th,td {
+        background-color: aliceblue;
+        text-align: center;
+        
+    }
+
+    tr,th,td {
+        padding: 10px;
+    }
+
+
+    table,tr,th,td:hover {
+        background-color: #00535359;
+    }
+
+    table thead th {
+        background-color: #033;
+        width: 200px;
+        color: #fff;}
+
+    h2 {
+        background-color: #033;
+        color: #fff;
+        padding: 10px;
+    }
+
+    .divdiv {
+        height: 100%;
+       
+    }
+        
+
+    .tdtd {
+        background-color: #005353;
+    }
+
+    .tdtd a {
+        color: #fff;
+    }
+</style>
+
+   <br>
+
+
+
+
+<div class="divdiv">
+    <div class="plann">
+            <h2> Planning </h2>
+            <table>
+                <thead>
+                <tr>
+                    <th>seance</th>
+                    <th>categorie</th>
+                    <th>dicipline</th>
+                    <th>date</th>
+                    <th>tariff</th>
+                    <th>coach</th>
+                </tr>
+            </thead>
+                {%for s in object_list%}
+
+                    <tr>
+                    
+                        <th class="tdtd"><a href='planning/{{s.id}}/'> {{s.nom}}  </a> </th>
+                        <td>{{s.category}}   </td>
+                        <td>{{s.dicipline}}   </td>
+                        <td>{{s.date}}   </td>
+                        <td>{{s.tariff}}   </td>
+                        <td>{{s.coach}}   </td>
+                        
+                    </tr>
+            {% endfor %}
+            </table>
+            
+         </div>
+
+</div>
+ {% endblock content %}

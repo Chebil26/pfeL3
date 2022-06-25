@@ -1,0 +1,36 @@
+{% extends 'accounts/base.html' %}
+{% block content %}
+<head>
+    <title> Supprimer Une Seance </title>
+</head>
+{% load static %}
+<style>
+      .supp {
+        width: 400px;
+        padding: 20px;
+        display: flex;
+        text-align: center;
+        margin-top: 30px;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 30px;
+        margin-left: 450;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+</style>
+
+<div class="supp">
+<form action='.' method='POST' > {%csrf_token%}
+
+<h2> voulez vous supprimer cette seance ? "{{object.nom}}" ? </h2>
+ <input type='submit' value="oui"/>
+
+<button type="reset" onclick="location.href='../'">
+    non
+</button>
+</div>
+
+
+{% endblock content %}

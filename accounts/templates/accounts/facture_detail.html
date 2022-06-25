@@ -1,0 +1,61 @@
+{% extends 'accounts/base.html' %}
+
+{% block content %}
+
+<head>
+    <title> Facture </title>
+</head>
+
+<style>
+    
+    .fact {
+      width: 400px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin-top: 30px;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 30px;
+        margin-left: 450;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .fact a {
+       text-decoration: none;
+       background-color: #033;
+       color: #fff;
+       padding: 15px;
+       width: 150px;
+       border-radius: 10px;
+       
+    }
+
+</style>
+
+{% comment %} {%for instance in object_list%} {% endcomment %}
+   <br>
+
+
+<div class="fact">
+   
+   {% comment %} <h3> {{object_list.id}} </h3> {% endcomment %}
+   <h3>facture de: {{object_list.abonne}} </h3>
+   <h3> pour l'abonnement: {{object_list.abonnement.nom}} </h3>
+   <h3>  et pour {{object_list.seance.nom}} </h3>
+   <h3>prix de {{object_list.abonnement.nom}}:  {{object_list.abonnement.tariff}} da  </h3>
+   <h3>prix de {{object_list.seance.nom}}:  {{object_list.seance.tariff}} da  </h3>
+
+
+   <h3>total: {{ object_list.abonnement.tariff|add:object_list.seance.tariff }} da </h3>
+
+   <a href={%url 'abonnement_paiment'%}> paiment </a>
+
+</div>
+{% comment %} 
+{% endfor %} {% endcomment %}
+
+{% endblock content %}

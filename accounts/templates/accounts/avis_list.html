@@ -1,0 +1,74 @@
+{% extends 'accounts/base.html' %}
+
+{% block content %}
+<head>
+    <title> Liste Des Avis </title>
+</head>
+
+<style>
+   .glo {
+      display: flex;
+      width: 60%;
+      margin-top: 200px;
+      margin: auto;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   }
+
+   .pic-name {
+   
+      text-align: center;
+      height: 200px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   }
+
+   .pic-name img{ 
+      width: 150px;
+      height: 150px;
+      margin-bottom: -10px;
+      border-radius: 5px;
+    
+   }
+
+   .pic-name p {
+      background-color: #033;
+      color: #fff;
+      padding: 10px;
+  
+   }
+
+   .av {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   
+   }
+
+</style>
+
+{%for avis in object_list%}
+   <br>
+<div class="glo">
+
+   <div class="pic-name">
+
+      <img class="profile-pic" src="{{avis.auteur.customer.profile_pic.url}}" >
+      <p> {{avis.auteur}}  </p>
+
+   </div>
+   <div class="av">
+      <p>{{avis.avis}} </p>
+   </div>
+
+</div>
+{% endfor %}
+
+{% endblock content %}
+
+ 

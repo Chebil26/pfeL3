@@ -1,0 +1,195 @@
+{%  extends 'accounts/footer.html'%}
+{% load static %}
+{% block content %}
+
+
+<head>
+    <title> Profile </title>
+</head>
+{{requset.user.id}}
+<style>
+	html,
+	body {
+		margin: 0px;
+		padding: 0px;
+
+	}
+
+	.header-profile {
+		background-color: #033;
+		height: 60px;
+		margin-top: -20px;
+		display: flex;
+		align-items: center;
+		
+	 }
+
+	 .img1 {
+		 width: 150px;
+		 margin-left: 50px;
+		 margin-top: 40px;
+	 }
+
+	.profile-pic{
+		/*border: 3px solid rgb(0, 0, 0) ;
+		border-radius: 75px;*/
+		position: absolute;
+		top: -75px;
+		left: 45%;
+		box-shadow: 0 4px 8px 0 #00333385, 0 6px 20px 0 #00333385;
+		-webkit-box-shadow: 0 4px 8px 0 #00333385, 0 6px 20px 0 #00333385;
+		-moz-box-shadow: 0 4px 8px 0 #00333385, 0 6px 20px 0 #00333385;
+		border-radius: 75px;
+	
+	}
+
+	.profile-pic img {
+		width: 150px;
+		height: 150px;
+		margin: 0 auto;
+		border-radius: 75px;
+		
+	}
+
+	.formatin {
+		width: 80%;
+		border: 1px solid #EEE;
+		background-color: #FFF;
+		border-radius: 5px;
+		padding: 10px;
+		margin-left: auto;
+	
+		
+	
+	}
+
+	 
+
+	 .Glob {
+		 background-color: #f4f5f8;
+		 position: relative;
+		 height: 60%	;
+		 margin: 60px;
+		 padding: 10px;
+		 display: flex;
+		 flex-wrap: wrap;
+		 padding-top: 100px;
+		 margin-top: 100px;
+		 padding-bottom: 20px;
+		 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		-webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		-moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		 border-radius: 10px;
+		
+	 }
+
+	 .links2 {
+		width: 15%;
+		background-color: #033;
+		border-radius: 5px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	
+		
+	 }
+
+	 .links2 a {
+		 display: block;
+		 color: #FFF;
+		 text-decoration: none;
+		 font-weight: bold;
+		 line-height: 3;
+		 
+	 }
+
+	 .links2 a:hover {
+		 
+		 width: 170px;
+		 text-align: center;
+		 border-radius: 5px;
+		 background-color: white;
+		 color: #033;
+	
+	 }
+
+	 .links2 a.sup:hover {
+		width: 170px;
+		 text-align: center;
+		 border-radius: 5px;
+		 background-color: rgb(255, 0, 0);
+		 color: #ffffff;
+
+	 }
+
+
+
+	 .loug {
+		 color: #FFF;
+		 text-decoration: none	;
+		 font-weight: bold;
+		 margin-left: 1000px;
+	
+		
+		 }
+	 .loug:hover {
+		 background-color: #FFF;
+		 color: #033;
+		 border-radius: 5px;
+		 height: 20px;
+		 padding: 2px;	
+	 }
+
+	
+</style>
+
+<br>
+
+<div class="header-profile">
+	<a href="{% url 'accueil' %}"><img class="img1" src="{% static 'accounts/images/P2.png' %}" alt=""></a>
+	<a class="loug" href="{%url 'logout'%}">Déconnecter</a>
+</div>
+
+<div class="Glob">
+
+	
+	<div class="links2">
+		<a href="{% url 'accueil' %}">Accuil</a>
+		<a href="{%url 'account_settings'%}">Setting</a>
+		<a class="sup" href={{request.user.id}}/delete>supprimer compte</a>
+		<a href="{%url 'logout'%}">Déconnecter</a>
+		<a href=""></a>
+	</div>
+
+	<div class="profile-pic">
+		<img src="{{request.user.customer.profile_pic.url}}" >
+	</div>
+           
+	
+	
+		
+	<div class="formatin">
+		<p>Nom d'utilisateur: {{request.user}}</p><hr>
+		<div class="card card-body">
+			<form method="POST" action="" enctype="multipart/form-data">
+				{% csrf_token %}
+				{{form.as_p}}
+		
+			<input class="btn btn-primary" type="submit" name="Update Information">
+			</form>
+		</div>
+
+	</div>
+
+
+	<div class="col-md-9">
+		
+	</div>
+</div>
+
+<br>
+<p> <p></p>
+
+
+{% endblock %}

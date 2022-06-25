@@ -1,0 +1,298 @@
+{% extends 'accounts/base.html' %}
+
+    
+    
+
+{% block content %}
+<head>
+    <title> Accueil </title>
+</head>
+{% load static %}
+    <style>
+
+        html,
+        body {
+            padding: 0px;
+            margin: 0px; 
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .profile-pic1 img {
+            width: 70;
+            height: 70;
+            border-radius:35px;
+            margin-left: 20px;
+            border: 2px solid #fff;
+
+        }
+
+        .h3 {
+            margin-left: 20px;
+        }
+
+        .h4 {
+            margin-left: 900px;
+        }
+
+        .profil1 a {
+            text-decoration: none;
+            color: #FFF;
+        }
+
+        .profil1 {
+            background-color: #003333;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+           
+    
+        }
+
+        .h4 a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .h4 a:hover {
+		 background-color: #FFF;
+		 color: #033;
+		 border-radius: 5px;
+		 height: 20px;
+		 padding: 5px;	
+	 }
+
+
+        .Consulter {    
+            background-color: #01868688;
+            padding: 5px;
+            height: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .Consulter a {
+            text-decoration: none;
+            font: bold;
+            color: #ffffff;
+            background-color: #011d1d;
+            padding: 20px;
+            height: 80px;
+            border-radius: 10px;
+            width: 800px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px;
+            font-weight: bold;
+            font-size: 16px;
+
+        }
+
+        .Consulter a:hover {
+            color: #33ffff;
+                border-radius: 40px;
+                box-shadow: 0 0 5px #33ffff, 0 0 6px #66ffff;
+                width: 840px;
+                height: 100px;
+                font-size: 25px;
+        }
+
+        .mySlides {display:none;}
+
+        .gg {
+          background-color: #003333;
+          height: 89%;
+          position: relative;
+          margin-top: -20px;
+          
+       
+
+        }
+
+        .mySlides {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            z-index: 1;
+        
+        }
+
+        .login11 {
+            background-color: #033;
+            position: absolute;
+            z-index: 20;
+            padding: 5px;
+            bottom: 40px;
+            left: 44%;
+            border-radius:15px;
+            padding: 20px;
+            text-decoration: none;
+            color: #FFF;
+            font-weight: bold;
+            
+        }
+
+        .login11:hover {
+                color: #33ffff;
+                border-radius: 40px;
+                box-shadow: 0 0 5px #33ffff, 0 0 6px #66ffff;
+        }
+
+
+       .nav-bar {
+           height: 100%;
+           flex-direction: column;
+           justify-content: center;
+            align-items: center;
+             background-color: #313d3dcc;
+             margin-top: -16px;
+        }
+        
+        .nav-bar ul li a {
+            color: #FFF;
+            display: flex;
+            font-size: 28px;
+            width: 350px;
+            height: 500px;
+            text-decoration: none;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            background-color: #003333;
+            opacity:  .8;
+            stroke: 1px red;
+        }
+        .nav-bar ul li a:hover {
+            background-color: #0033336b;
+            font-weight: bold;
+            font-size: 30px;
+            z-index: 6000;
+        }
+
+
+        .nav-bar ul li {
+            color: #FFF;
+            display: flex;
+            width: 300px;
+            height: 500px;
+            text-decoration: none;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            margin: 10px;
+            margin-top: 90px;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .escabn,
+        .esccoa,
+        .escger {
+            background-repeat: no-repeat;
+            background-size: 200% 100%;
+            background-position: top center;
+        }
+
+        .escabn {
+            background-image: url("{% static 'accounts/images/DD.jpg' %}");
+        }
+
+        .esccoa {
+            background-image: url("{% static 'accounts/images/FF.jpg' %}");
+        }
+       
+        .escger {
+            background-image: url("{% static 'accounts/images/ger.jpg' %}");
+        }
+       
+       
+    
+  
+    </style>
+
+<div class="gg"> 
+
+     
+      <img class="mySlides" src="{% static 'accounts/images/GGG.png' %}" >
+      <img class="mySlides" src="{% static 'accounts/images/MMM.jpg' %}" >
+      <img class="mySlides" src="{% static 'accounts/images/fff.jpg' %}" >
+   
+    
+
+
+    {% if not user.is_authenticated %}
+   
+       <a class="login11" href="{%url 'login'%}"> S'authentifier </a>
+        <!--<h3> <a href={%url 'register'%}> S'inscrire </a> </h3>-->
+    {% endif %}
+   
+    <script>
+    var myIndex = 0;
+    carousel();
+    
+    function carousel() {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+      }
+      myIndex++;
+      if (myIndex > x.length) {myIndex = 1}    
+      x[myIndex-1].style.display = "block";  
+      setTimeout(carousel, 8000); // Change image every 2 seconds
+    }
+    </script>
+</div>
+
+
+
+ {% if user.is_authenticated %}
+    
+    <div class="profil1">
+
+        <div class="profile-pic1">
+            <a href="{%url 'account_settings'%}"><img src="{{request.user.customer.profile_pic.url}}" ></a>
+        </div>
+
+        {% if user.is_authenticated %}
+        <a href="{%url 'account_settings'%}"> <h3 class="h3">Bienvenue {{request.user}}</h3></a>
+        {% endif %}
+        <h4 class="h4"> <a href={%url 'logout'%}> Déconnecter </a> </h4>
+    </div>
+
+{% endif %}
+
+
+   
+<nav class="nav-bar">
+
+    <ul class="nav-links">
+        <li  class="escabn"><a href={%url 'espaceabonne'%}>Espace Abonne</a></li>
+        <li class="esccoa" ><a  href={%url 'espacecoach'%}>Espace Coach</a></li>
+        <li class="escger"><a  href="{% url 'admin:index' %}">Espace Gerant</a></li>
+    </ul>
+
+</nav>
+
+
+<div class="Consulter">
+    <a href="{%url 'planning'%}"> <span> Planning </span> </a>
+   <a href="{%url 'abonnement_list'%}"> <span> Liste des abonnements </span> </a>
+   <a href="{%url 'dicipline_list'%}"> <span></span>Diciplines </span></a> 
+    <a href="{%url 'avis_list'%}"> <span></span>Avis de nos abonnés </span> </a> 
+   <a href="{%url 'coach_list'%}"> <span></span>Liste des coachs </span> </a>
+</div>
+{% endblock content %}

@@ -1,0 +1,260 @@
+
+
+{% block content %}
+
+
+ 
+{% endblock content %}
+{% load static %}
+<style>
+      
+      footer {
+            position: relative;
+            height: 100%;
+            background-color: #033;
+            padding: 5px;
+        }
+        .footerfo {
+     
+        
+            color: #fff;
+            font-weight: bold;
+            position: absolute;
+            bottom: 0px;
+            width: 90%;
+            padding: 5px;
+            left: 40px;
+    
+ }
+
+        .footerfo ul {
+            display: inline;
+        }
+
+        .footerfo ul li a img {
+            width: 30px;
+            margin-left: 3px;
+            
+        }
+ 
+        .footerfo ul li {
+            display: inline;
+        }
+
+        .footerfo ul li a {
+            color: #fff;
+        }
+
+        .socialmedia {
+            float: right;
+            margin-top: -40px;
+            margin-right: 20px;
+        }
+
+        div.copy {
+            margin-top: -5px;
+            margin-left: 30px;
+        }
+
+        .soclMed {
+            background-color: #033;
+            height: 30px;
+            width: 200  px;
+            margin-left: 248px;
+            border-bottom-left-radius: 100px;
+            outline: #fff;
+
+        }
+
+
+        .flex {
+            height: 90%;
+            display: flex;
+            color: #fff;
+            justify-content: center;
+            margin-top: 50px;
+            margin-bottom: -60px;
+           
+            
+        }
+
+        .flex div {
+            margin: 10px;
+     
+          
+        }
+
+    
+
+        ul li {
+            list-style: none;
+            
+        }
+
+        .aboutus {
+           width: 300px;
+        }
+
+      
+
+        .WORKINGHOURS{
+            width: 350;
+      
+        }
+        
+        .WORKINGHOURS,
+        .contactus,
+        .quick-links,
+        .aboutus {
+       
+            height: 300px;
+            align-items: center;
+          
+        }
+
+       
+
+        .WORKINGHOURS span {
+            float: right;
+        }
+
+        .navbar {
+           
+            float: left;   
+        }
+
+        .navlinks {
+            border-left: 1px solid #fff;
+            float: right;
+        }
+
+        .quick-links div ul li a {
+            text-decoration: none;
+            color: #fff ;
+            line-height: 2;
+        }
+
+        .quick-links div ul li a:hover {
+            color: #028585;
+        }
+        
+
+        .aboutusdec {
+            width: 300px;
+        }
+
+        
+
+        .ion-icon {
+            color: #fff;
+            font-size: 20px;
+            margin-bottom: -6px;
+            
+        }
+
+        .img1 {
+            width: 150px;
+            height: 100px;
+           
+        }
+
+        .flex div h2 {
+            text-align: center;
+            background-color: #005353;
+            padding: 5px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 40px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+       .loca {
+           margin-top: 50px;
+       }
+
+       .navlinks,
+       .navbar {
+           margin-top: 20px;
+       }
+</style>
+<body>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <footer>
+
+
+        <div class="flex">
+            <div class="aboutus">
+                <a href="{% url 'accueil' %}"><img class="img1" src="{% static 'accounts/images/P2.png' %}" alt=""></a>
+                <p>Votre transformation est notre passion. Nous sommes vos entraîneurs personnels, votre nutritionniste, votre expert en suppléments, votre partenaire de levage, votre groupe de soutien. Nous fournissons la technologie, les outils et les produits dont vous avez besoin pour brûler les graisses, développer vos muscles et devenir le meilleur de vous-même.</p>
+            </div>
+          
+            <div class="quick-links">
+                <h2>LIENS RAPIDES</h2>
+                <div class="navbar">
+                    <ul>
+                        <li><a href="{% url 'accueil' %}"> Accuil</a></li>
+                        <li><a href="/">about us</a></li>
+                        <li><a href="/"> contact us</a></li>
+                    </ul>
+                </div>
+                <div class="navlinks">
+                    <ul>
+                        <li><a href="{%url 'planning'%}">Planning</a></li>
+                        <li><a href="{%url 'abonnement_list'%}">Liste des abonnements</a></li>
+                        <li><a href="{%url 'dicipline_list'%}">Diciplines</a></li>
+                        <li><a href="{%url 'avis_list'%}">Avis de nos abonnés</a></li>
+                        <li><a href="{%url 'coach_list'%}">Liste des coachs</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="WORKINGHOURS">
+                <h2> HEURES D'OUVERTURE </h2>
+                <p><ion-icon class="ion-icon" name="time-outline"></ion-icon> samedi<span>04:00-20:00</span></p> <hr>
+                <p><ion-icon class="ion-icon" name="time-outline"></ion-icon> dimanche<span>04:00-20:00</span></p><hr>
+                <p><ion-icon class="ion-icon" name="time-outline"></ion-icon> lundi<span>05:00-20:00</span></p><hr>
+                <p><ion-icon class="ion-icon" name="time-outline"></ion-icon> mardi<span>05:00-20:00</span></p><hr>
+                <p><ion-icon class="ion-icon" name="time-outline"></ion-icon> mercredi<span>06:00-20:00</span></p><hr>
+                <p><ion-icon class="ion-icon" name="time-outline"></ion-icon> jeudi<span>06:00-20:00</span></p>
+    
+            </div>
+    
+            <div class="contactus">
+                <h2>CONTACT US</h2>
+                <div class="local">
+                   <p><ion-icon class="ion-icon" name="location-outline"></ion-icon>naadja saghira 25000, Constantine</p>
+                </div>
+                <hr>
+                <div class="phone">
+                    <p> <ion-icon class="ion-icon" name="call-outline"></ion-icon> Troll Free: +213 66 66 66</p>
+                </div>
+                <hr>
+                <div class="email1">
+                    <p> <ion-icon class="ion-icon" name="mail-outline"></ion-icon> sallsport@gmail.com</p>
+                </div>
+    
+            </div>
+            
+        </div>
+    
+        <hr>
+      
+        <div class="footerfo">
+            <div class="copy">
+                <p>Copyright ©2021 All rights reserved | Design by G19</p>
+            </div>
+            <div class="socialmedia">
+                <ul>
+            
+                    <li><a href="https://www.facebook.com" target="_blank"><img src="{% static 'accounts/images/Facebook.png' %}" alt="Facebook"></a></li>
+                    <li><a href="https://www.instagram.com" target="_blank"><img src="{% static 'accounts/images/Insta.png' %}" alt="Insta"></a></li>
+                    <li><a href="https://www.pinterest.com" target="_blank"><img src="{% static 'accounts/images/Prin.png' %}" alt="Prin"></a></li>
+                    <li><a href="https://www.twitter.com" target="_blank"><img src="{% static 'accounts/images/T.png' %}" alt="T"></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>

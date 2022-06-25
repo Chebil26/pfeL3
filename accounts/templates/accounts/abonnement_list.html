@@ -1,0 +1,82 @@
+{% extends 'accounts/base.html' %}
+
+{% block content %}
+
+<head>
+    <title> Liste Des Abonnement </title>
+</head>
+<style>
+
+    .h4h4 {
+       background-color: #003333;
+       color: #fff;
+       text-align: center;
+       padding: 10px;
+       border-radius: 10px;
+    }
+
+    .abonm h4 span {
+       color: #028b8b;
+    }
+
+   .abonm {
+  
+ 
+      width: 30%;
+      display: flex;
+      flex-direction: column;
+      margin-top: 40px;
+      margin-left: 450px;
+      padding: 10px;
+
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+      border-radius: 5px;
+     
+  
+        }
+
+      .chabn {
+         display: flex;
+         justify-content: center;
+      }
+
+      .chabn p a {
+         text-decoration: none;
+         background-color: #009191;
+         color: #fff;
+         padding: 20px;
+         border-radius: 10px;
+      }
+</style>
+
+
+
+
+{%for s in object_list%}
+
+<div class="abonm">
+   <h4 class="h4h4">detail sur l'abonnement:  {{s.nom}}  </h4>
+  
+   <h4><span> descreption:</span>   {{s.description}} </h4>
+   <h4><span>nombre de seance de l'abonnement:</span> {{s.nbr_seance}} </h4>
+   <h4><span>tariff:</span> {{s.tariff}} da </h4>
+   <h4><span>date de debut de l'abonnement:</span> {{s.date_debut}} </h4>
+   <h4><span>date de:</span>  {{s.date_fin}} </h4>
+   <h4><span> id:</span>    {{s.id}} </h4>
+
+   {% if user.is_authenticated %}
+   <div class="chabn">
+      <p><a href="{%url 'order_create'%}">choisir un abonnement</a></p>
+   </div>
+   {% endif %}
+   </div>
+
+
+{% endfor %}
+
+{% endblock content %}
+
+ 

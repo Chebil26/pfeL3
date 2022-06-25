@@ -1,0 +1,40 @@
+{% extends 'accounts/base.html' %}
+{% block content %}
+<head>
+    <title> Rediger votre Avis </title>
+</head>
+
+<style>
+    .avis1 {
+        width: 400px;
+       
+        display: flex;
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        flex-direction: column;
+        margin-left: 450;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .avis1  h3 {
+        background-color: #033;
+        width: 95%;
+        color: #fff;
+        padding: 10px;
+    }
+</style>
+
+<div class="avis1">
+    <h3>Donner Votre Avis</h3>
+<form action='.' method='POST'> 
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="enregistrer" />
+</form>
+</div>
+
+
+{% endblock content %}

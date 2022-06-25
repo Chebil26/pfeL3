@@ -1,0 +1,102 @@
+body,html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+   /* background: #7abecc !important;*/
+}
+
+div.right {
+   
+    width: 50%;
+    float: left;
+    background-color: #033;
+    height: 100%;
+    background-image: url("RT.jpg");
+}
+
+.right p {
+    color: #FFF;
+  
+    font-size: 70px;
+    font-weight: bold;
+    margin-top: 40%;
+    margin-left: 10%;
+   -webkit-text-fill-color: transparent;
+   -webkit-text-stroke: 2px #fff;
+   font-family: 'Franklin Gothic Heavy';
+}
+
+
+.container-h-100 {
+
+    width: 50%;
+    height: 100%;
+    float: right;
+    padding: 50% auto;
+}
+
+.container {
+    max-width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.login_btn {
+    width: 60%;
+    font-weight: bold;
+    padding: 5px;
+    background: #033 !important;
+    color: white !important;
+    margin-top: 30px;
+}
+
+
+
+
+
+.input-group {
+    width: 400px;
+}
+
+.input-group-text {
+    background: #033 !important;
+    color: white !important;
+    border: 0 !important;
+    border-radius: 0.25rem 0 0 0.25rem !important; 
+}
+
+h4 a {
+    color: #033;  
+}
+
+#form-title {
+   margin-bottom: 80px;
+   text-decoration: underline;
+   margin-left: 1%;
+   margin-top: 20px;
+}
+
+#messages {
+    color: red;
+}
+
+.backAcc {
+    width: 160px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.backAcc img {
+    width: 160px;
+    height: 130px;
+    margin-top: -17px;
+
+   
+}
+
+/*#form-title11 a {
+    text-decoration: none;
+    margin-top: 20px;
+}*/
+

@@ -1,0 +1,21 @@
+{% extends 'accounts/base.html' %}
+
+
+
+{% block content %}
+
+{% comment %} <h4> {{object.id}} </h4> {% endcomment %}
+<h4>detail sur l'abonnement:  {{object.nom}} </h4>
+<h4>descreption:   {{object.description}} </h4>
+<h4>nombre de seance de l'abonnement:  {{object.nbr_seance}} </h4>
+<h4>tariff:   {{object.tariff}} da </h4>
+<h4>date de debut de l'abonnement:   {{object.date_debut}} </h4>
+<h4>date de:    {{object.date_fin}} </h4>
+
+
+
+
+
+
+
+{% endblock content %}

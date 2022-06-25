@@ -1,0 +1,36 @@
+{% extends 'accounts/base.html' %}
+{% block content %}
+<head>
+    <title> Choisir Un Abonnement </title>
+</head>
+
+<style>
+    .chabnmm {
+      width: 300px;
+      margin-left: 500px;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      height: 20%;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    }
+</style>
+
+<div class="chabnmm">
+    <form action='.' method='POST'> 
+    {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="choisir" />
+    </form>
+</div>
+
+
+{% endblock content %}
